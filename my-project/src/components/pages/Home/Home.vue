@@ -1,5 +1,7 @@
 <template>
-    
+    <div id="app-hone" class="page">
+        <app-home-banner></app-home-banner>
+    </div>
 </template>
 
 <script>
