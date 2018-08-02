@@ -12,10 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/my' : {
-        target : 'https://www.duitang.com',
+        target : 'http://m.muyingzhijia.com',
         changeOrigin : true,
         pathRewrite : {
-          '^/dt' : ''
+          '^/my' : ''
         }
       }
     },

@@ -6,7 +6,7 @@ import App from './App'  //根组件
 // 全局配置
 import './modules/config'; 
 
-
+/* eslint-disable */
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
