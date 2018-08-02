@@ -3,6 +3,10 @@
         <app-home-head></app-home-head>
         <app-home-banner></app-home-banner>
         <app-notice></app-notice>
+        <app-home-nav></app-home-nav>
+        <app-home-new></app-home-new>
+        <app-home-activity></app-home-activity>
+        <app-home-zone></app-home-zone>
     </div>
 </template>
 
@@ -10,13 +14,21 @@
 import AppHomeBanner from './HomeBanner';
 import AppHomeHead from './HomeHead';
 import AppNotice from './HomeNotice';
+import AppHomeNav from './HomeNav';
+import AppHomeNew from './HomeNew';
+import AppHomeActivity from './HomeActivity';
+import AppHomeZone from './HomeZone';
  
 export default {
     name : 'AppHome',
     components : {
         AppHomeBanner,
         AppHomeHead,
-        AppNotice
+        AppNotice,
+        AppHomeNav,
+        AppHomeNew,
+        AppHomeActivity,
+        AppHomeZone
     }
 }
 </script>
