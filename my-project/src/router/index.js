@@ -9,7 +9,7 @@ import Home from '../components/pages/Home/Home'
 import Classify from '../components/pages/Classify/Classify'
 import ShoppingCar from '../components/pages/ShoppingCar/ShoppingCar'
 import Account from '../components/pages/Account/Account'
-import GoodsList from '../components/pages/GoodsList/goodslist.vue'
+import GoodsList from '../components/pages/GoodsList/GoodsList.vue'
 
 // 路由 表
 const routes = [

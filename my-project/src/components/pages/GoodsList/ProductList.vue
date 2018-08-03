@@ -7,10 +7,10 @@
 				</span>
 			</div>
 			<a href="#" class="top_pic" v-else>
-					<img :src="item.ImgList[0].ImgUrl">
+				<img :src="item.ImgList[0].ImgUrl">
 			</a>
 			<ul class="product-list clear">
-				<li class="product-item" v-for="p in item.ColumnProductList" >
+				<li class="product-item" v-for="p in item.ColumnProductList" :key="p.ProductListId" :data-id="p.ProductListId">
 					<div class="p_img">
 						<a href="#">
 							<img :src="p.ImgUrl | formatUrl">
@@ -20,9 +20,10 @@
 						{{ p.ProductName }}                                               
 					</div>
 					<div class="p_button clear">
-						<div class="button_l">￥{{ p.Price }}</div>
-						<div class="button_r "><a href="#">立即购买</a></div>
+						<div :class="[ 'button_l', p.Stock==0? 'saleOut_l':'sale_l' ]">￥{{ p.Price }}</div>
+						<div class="button_r"><a :class="[ p.Stock==0? 'saleOut_r':'sale_r' ]" href="#">立即抢购</a></div>
 					</div>
+					<div class="done" v-if="p.Stock == 0"><span>已售罄</span></div>
 				</li>
 			</ul>
 		</div>
@@ -33,7 +34,12 @@
 <script type="text/javascript">
 	import Vue from "vue";
 	Vue.filter("formatUrl",function(url){
-		return url.replace("{type}","380x380");
+		if(url.indexOf("{type}") > 0){
+			return url.replace("{type}","380x380");
+		}else if(url.indexOf("{0}") != -1){
+			return url.replace("{0}","big");
+		}
+		
 	})
 	export default {
 		name: "productList",
@@ -72,7 +78,6 @@
 		text-align: center;
 		width: 100%;
 		height: 0.5rem;
-		// background-color: #ccc;
 		border-bottom: 1px solid #ccc;
 		padding: 0 0.24rem;
 		.title_line {
@@ -92,18 +97,19 @@
 		}
 	}
 
-		.top_pic {
-			img {
-				width: 100%;
-				height: 0.65rem;
-			}
+	.top_pic {
+		img {
+			width: 100%;
+			height: 0.65rem;
 		}
+	}
 	.product-list {
+		margin-bottom: 20px;
 		width: 100%;
 		li {
 			width: 50%;
 			height: 2.87rem;
-			// background-color: green;
+			position: relative;
 			float: left;
 			padding: 0.12rem;
 			padding-bottom: 0;
@@ -138,8 +144,7 @@
 					color: #FFFFFF;
 					text-align: left;
 					float: left;
-					background-color: #FF85AC;
-					font-size: 16px;
+					font-size: 0.16rem;
 				}
 				.button_r {
 					a {
@@ -152,10 +157,38 @@
 						color: #FFFFFF;
 						text-align: center;
 						float: right;
-						background-color: #e7507b;
+						// background-color: #e7507b;
 					}
 
 				}
+				.sale_l {
+					background-color: #FF85AC;
+				}
+				.sale_r {
+					background-color: #e7507b;
+				}
+				.saleOut_l {
+					background-color: #A2A2A2;
+				}
+				.saleOut_r {
+					background-color: #737373;
+				}
+			}
+			.done {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 0.6rem;
+				height: 0.6rem;
+				background-color: rgba(0,0,0,0.5);
+				border-radius: 50%;
+				z-index: 10;
+				transform: translate(-50%,-90%);
+				color: #fff;
+				text-align: center; 
+				line-height: 0.6rem;
+				font-size: 18px;
+
 			}
 		}
 	}

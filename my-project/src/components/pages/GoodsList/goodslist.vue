@@ -1,5 +1,6 @@
 <template>
 	<div class="goods-list">
+		<app-list-header>奶粉精选</app-list-header>
 		<img src="http://img.muyingzhijia.com/img/201702/20170227160753_10_nfym_01.jpg">
 		<app-detail></app-detail>
 		<app-products></app-products>
@@ -8,8 +9,8 @@
 
 <script type="text/javascript">
 
-	import details from './product_details.vue';
-	import products from './product_list.vue';
+	import details from './ProductDetails.vue';
+	import products from './ProductList.vue';
 
 	export default {
 		name: "AppList",
