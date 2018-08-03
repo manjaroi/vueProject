@@ -7,6 +7,8 @@
         <app-home-new></app-home-new>
         <app-home-activity></app-home-activity>
         <app-home-zone></app-home-zone>
+        <app-home-today></app-home-today>
+        <app-nav></app-nav>
     </div>
 </template>
 
@@ -18,6 +20,7 @@ import AppHomeNav from './HomeNav';
 import AppHomeNew from './HomeNew';
 import AppHomeActivity from './HomeActivity';
 import AppHomeZone from './HomeZone';
+import AppHomeToday from './HomeToday';
  
 export default {
     name : 'AppHome',
@@ -28,7 +31,8 @@ export default {
         AppHomeNav,
         AppHomeNew,
         AppHomeActivity,
-        AppHomeZone
+        AppHomeZone,
+        AppHomeToday
     }
 }
 </script>

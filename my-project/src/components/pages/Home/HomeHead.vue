@@ -5,7 +5,7 @@
                <img src="//static.boodoll.cn/wap/v2/img/icon/logo.png" alt="">
            </div>
            <div class="hd_title hd_search">
-               <span><i></i></span>
+               <span><i class="fa fa-search"></i></span>
                <input type="text" placeholder="搜索">
            </div>
        </div>
@@ -51,6 +51,18 @@ export default {
             }
             input::-webkit-input-placeholder{
                 color: #fff;
+            }
+            span{
+                float: left;
+                height: 0.32rem;
+                width: 0.32rem;
+                text-align: center;
+                border-radius: 0.02rem 0rem 0rem 0.02rem;
+                i{
+                    color: #fff;
+                    font-size: 0.14rem;
+                    line-height: 0.32rem;
+                }
             }
         }
     }
