@@ -1,14 +1,14 @@
 <template>
 	<div class="app-list-bottom">
 		<ul class="login-regist">
-			<li>
+			<router-link tag="li" to="/Login">
 				<i class="fa fa-user"></i>
 				<span>登录</span>
-			</li>
-			<li>
+			</router-link>
+			<router-link tag="li" to="/regist">
 				<i class="fa fa-user-plus"></i>
 				<span>注册</span>
-			</li>
+			</router-link>
 		</ul>
 	</div>
 </template>
