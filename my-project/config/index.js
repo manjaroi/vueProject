@@ -17,6 +17,13 @@ module.exports = {
         pathRewrite : {
           '^/my' : ''
         }
+      },
+      '/list' : {
+        target : 'http://goods.api.muyingzhijia.com',
+        changeOrigin : true,
+        pathRewrite : {
+          '^/list' : ''
+        }
       }
     },
 
