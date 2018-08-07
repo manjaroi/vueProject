@@ -10,18 +10,18 @@
 				<img :src="item.ImgList[0].ImgUrl">
 			</a>
 			<ul class="product-list clear">
-				<li class="product-item" v-for="p in item.ColumnProductList" :key="p.ProductListId" :data-id="p.ProductListId">
+				<li class="product-item" v-for="p in item.ColumnProductList" :key="p.ProductId" :data-id="p.ProductId">
 					<div class="p_img">
-						<a href="#">
+						<router-link :to="goodsUrl + '/' + p.ProductId ">
 							<img :src="p.ImgUrl | formatUrl">
-						</a>
+						</router-link>
 					</div>
 					<div class="p_name">
 						{{ p.ProductName }}                                               
 					</div>
 					<div class="p_button clear">
 						<div :class="[ 'button_l', p.Stock==0? 'saleOut_l':'sale_l' ]">￥{{ p.Price }}</div>
-						<div class="button_r"><a :class="[ p.Stock==0? 'saleOut_r':'sale_r' ]" href="#">立即抢购</a></div>
+						<div class="button_r"><router-link :class="[ p.Stock==0? 'saleOut_r':'sale_r' ]" :to="goodsUrl + '/' + p.ProductId ">立即抢购</router-link></div>
 					</div>
 					<div class="done" v-if="p.Stock == 0"><span>已售罄</span></div>
 				</li>
@@ -45,7 +45,8 @@
 		name: "productList",
 		data  (){
 			return {
-				columnList : [],
+				columnList: [],
+				goodsUrl: "",
 			}
 		},
 		methods: {
@@ -62,12 +63,14 @@
 					for(let i=2; i<len; i++){
 						this.columnList.push(res.data.Model.ColumnList[i]);
 					}
-					console.log(this.columnList);
+					// console.log(this.columnList);
 				});
 			}
 		},
 		mounted(){
 			this.getDatas();
+			this.goodsUrl = this.$store.state.commons.state.goodsUrl;
+			console.log();
 		}
 	}
 </script>

@@ -1,6 +1,6 @@
 <template>
 	<div class="list-header">
-		<i class="fa fa-angle-left"></i>
+		<i @click="$router.go(-1)" class="fa fa-angle-left"></i>
 		<h2 class="list-header-title"><slot></slot></h2>
 	</div>
 </template>

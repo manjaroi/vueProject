@@ -7,13 +7,14 @@ import App from './App'  //根组件
 import './modules/config'; 
 import './components/commons/component'
 import router from './router'
-
+import store from './store'
 /* eslint-disable */
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })
 

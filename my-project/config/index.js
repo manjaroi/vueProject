@@ -17,7 +17,15 @@ module.exports = {
         pathRewrite : {
           '^/my' : ''
         }
+      },
+      '/dt' : {
+        target : 'http://goods.api.muyingzhijia.com',
+        changeOrigin : true,
+        pathRewrite : {
+          '^/dt' : ''
+        }
       }
+      
     },
 
     // Various Dev Server settings

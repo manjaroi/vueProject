@@ -4,6 +4,8 @@
 		<img src="http://img.muyingzhijia.com/img/201702/20170227160753_10_nfym_01.jpg">
 		<app-detail></app-detail>
 		<app-products></app-products>
+		<app-to-top></app-to-top>
+		<app-list-bottom></app-list-bottom>
 	</div>
 </template>
 
