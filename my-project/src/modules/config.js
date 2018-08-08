@@ -18,6 +18,11 @@ Vue.prototype.$http = axios;
 //filter
 import './filters';
 
+import './load.js'
+import Impression from 'vue-impression'
+
+Vue.use(Impression)
+
 
 
 Vue.config.productionTip = false;

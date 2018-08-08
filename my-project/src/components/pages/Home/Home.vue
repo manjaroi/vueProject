@@ -9,31 +9,45 @@
         <app-home-zone></app-home-zone>
         <app-home-today></app-home-today>
         <app-nav></app-nav>
+        <app-mask></app-mask>
     </div>
 </template>
 
 <script>
 import AppHomeBanner from './HomeBanner';
-import AppHomeHead from './HomeHead';
 import AppNotice from './HomeNotice';
 import AppHomeNav from './HomeNav';
 import AppHomeNew from './HomeNew';
 import AppHomeActivity from './HomeActivity';
 import AppHomeZone from './HomeZone';
 import AppHomeToday from './HomeToday';
+
  
 export default {
     name : 'AppHome',
+    data (){
+        return {
+            loading : true
+        }
+    },
     components : {
         AppHomeBanner,
-        AppHomeHead,
         AppNotice,
         AppHomeNav,
         AppHomeNew,
         AppHomeActivity,
         AppHomeZone,
         AppHomeToday
+    },
+    mounted (){
+        // this.loading = false;
+        // console.log(this.loading);
+    },
+    destroyed (){
+        // this.loading = false;
+        // console.log(this.loading);
     }
+
 }
 </script>
 
